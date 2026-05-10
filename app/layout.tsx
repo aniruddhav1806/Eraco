@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   keywords: ['AI', 'automation', 'assistant', 'productivity', 'machine learning', 'background AI', 'autonomous AI', 'AI agent', 'adaptive execution', 'personal AI assistant'],
   viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 
+    verification: {
+    google: 'zWAh_5TD_CLb1Jc-bnqMFK_vBXLyBE-5TqAG4gj8nfA',
+  },
+  
   // Open Graph
   openGraph: {
     title: 'Eraco - AI That Actually Gets Work Done',
