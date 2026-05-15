@@ -11,11 +11,117 @@ export default function FeatureBlock() {
   return (
     <section id="engine" className="py-16 md:py-32 px-4 md:px-6 bg-white dark:bg-eraco-black">
       <div ref={ref} className="max-w-6xl mx-auto">
-        {/* Feature Block */}
+        {/* Product Introduction - What is Eraco */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
+          className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 mb-12 md:mb-20"
+        >
+          <div className="p-6 sm:p-8 md:p-12 lg:p-16">
+            {/* What is Eraco */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-8 md:mb-12"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white tracking-tight mb-4 md:mb-6">
+                Meet <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Eraco</span>
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Eraco is an <span className="font-semibold text-gray-900 dark:text-white">adaptive AI assistant</span> that works alongside you — understanding your intent, learning your workflows, and getting more capable with every interaction.
+              </p>
+            </motion.div>
+
+            {/* Core Value Proposition */}
+            <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                Unlike traditional automation tools that follow rigid scripts, Eraco adapts to <span className="font-semibold text-gray-900 dark:text-white">how you work</span> — not the other way around. Whether you're editing video, writing code, or managing files, Eraco meets you where you are and helps you get things done faster.
+              </p>
+            </div>
+
+            {/* Key Features Overview */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 md:mb-12">
+              {[
+                {
+                  title: 'Video Editing',
+                  description: 'Native integration with Premiere, DaVinci, and Final Cut — edits happen directly on your timeline.',
+                  highlight: 'Editor Integration',
+                },
+                {
+                  title: 'Teaching Mode',
+                  description: 'Eraco watches your screen, narrates what you\'re doing, and guides you step-by-step.',
+                  highlight: 'Unique to Eraco',
+                },
+                {
+                  title: 'AI Creation',
+                  description: 'Generate images, video, music, and voiceovers — or write and debug code alongside you.',
+                  highlight: 'Text-to-Media',
+                },
+                {
+                  title: 'Offline Power',
+                  description: 'File operations, music control, app switching — all work without internet, fully local.',
+                  highlight: '100% Private',
+                },
+              ].map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  className="p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-colors duration-300"
+                >
+                  <div className="text-[10px] font-medium uppercase tracking-wider text-orange-500 mb-2">{feature.highlight}</div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-500 text-xs sm:text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Links to Features and Changelog */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-center"
+            >
+              <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mb-4">
+                Explore all capabilities or follow the development journey
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <a
+                  href="/features"
+                  className="inline-flex items-center px-4 py-2.5 sm:px-5 sm:py-3 rounded-lg font-medium text-sm sm:text-base bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  View All Features
+                </a>
+                <a
+                  href="/changelog"
+                  className="inline-flex items-center px-4 py-2.5 sm:px-5 sm:py-3 rounded-lg font-medium text-sm sm:text-base border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-orange-500 hover:text-orange-500 transition-colors duration-200"
+                >
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Changelog
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Feature Block - Adaptive Execution Engine */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.3 }}
           className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800"
         >
           <div className="p-6 sm:p-8 md:p-12 lg:p-16">
