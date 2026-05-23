@@ -4,11 +4,10 @@ A modern, premium landing page for an AI product built with Next.js, Tailwind CS
 
 ## Features
 
-- 🎨 Apple-inspired minimal design
-- 🎬 Smooth scroll-based animations
-- 💻 3D laptop opening animation with floating cards
-- 📱 Fully responsive
-- ⚡ Optimized for performance
+- Smooth scroll-based animations
+- 3D laptop opening animation with floating cards
+- Fully responsive
+- Optimized for performance
 ## Tech Stack
 
 - **Next.js 14** (App Router)
