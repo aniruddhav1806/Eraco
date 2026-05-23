@@ -122,7 +122,7 @@ export default function FeatureBlock() {
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.3 }}
-          className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800"
+          className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 mb-12 md:mb-20"
         >
           <div className="p-6 sm:p-8 md:p-12 lg:p-16">
             {/* Main Heading */}
@@ -184,7 +184,7 @@ export default function FeatureBlock() {
             </div>
 
             {/* Supporting Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-6 md:pt-8 mb-12 md:mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-6 md:pt-8">
               {[
                 {
                   title: 'Real-Time Learning',
@@ -232,12 +232,22 @@ export default function FeatureBlock() {
               ))}
             </div>
 
+          </div>
+        </motion.div>
+
+        {/* Video Sections Block */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.4 }}
+          className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800"
+        >
+          <div className="p-6 sm:p-8 md:p-12 lg:p-16">
             {/* Product Video Section - SaaS Explainer */}
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-8 md:mt-16"
             >
               <div className="text-center mb-8 md:mb-12">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">
