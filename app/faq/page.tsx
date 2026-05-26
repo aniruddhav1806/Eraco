@@ -35,10 +35,26 @@ const faqData: FAQItem[] = [
     answer: "Eraco uses a hybrid approach. Heavy compute is offloaded to secure servers to keep your device fast and cool, while your data stays encrypted throughout. Only resource usage is ever visible — your files and activity are never exposed.",
     category: "General"
   },
+  // Comparisons
+  {
+    question: "Eraco VS Claude Code: What's the difference?",
+    answer: "While Claude Code is a powerful terminal-based coding tool, Eraco is a full-spectrum personal assistant that handles your entire digital life. Check out our Eraco VS Claude Code page for a detailed breakdown.",
+    category: "Comparisons"
+  },
+  {
+    question: "Eraco VS Anti Gravity: Which is better?",
+    answer: "Anti Gravity is a specialized, planning-focused coding agent, whereas Eraco is a holistic AI presence with a beautiful interface. Check out our Eraco VS Anti Gravity page for a detailed breakdown.",
+    category: "Comparisons"
+  },
+  {
+    question: "Eraco VS Standard LLMs (ChatGPT, Gemini, etc.)",
+    answer: "Standard LLMs wait for you to prompt them and generate text. Eraco operates in the background, autonomously taking action directly in your environment. Check out our Eraco VS Standard LLMs page for a detailed breakdown.",
+    category: "Comparisons"
+  },
   // Privacy & Security
   {
     question: "Is my data safe with Eraco?",
-    answer: "Yes. All data processed by Eraco is encrypted end-to-end. Nothing is stored or accessed without your knowledge, and your files are never used to train any model.",
+    answer: "Yes. All data processed by Eraco is TLS-encrypted. Nothing is stored or accessed without your knowledge, and your files are never used to train any model.",
     category: "Privacy & Security"
   },
   {
@@ -138,7 +154,7 @@ const faqData: FAQItem[] = [
   },
 ];
 
-const categories = ["General", "Privacy & Security", "Features", "Pricing & Plans", "Performance", "Roadmap", "Trust & Philosophy"];
+const categories = ["General", "Comparisons", "Privacy & Security", "Features", "Pricing & Plans", "Performance", "Roadmap", "Trust & Philosophy"];
 
 export default function FAQPage() {
   const { theme } = useTheme();
@@ -339,7 +355,6 @@ export default function FAQPage() {
 }
 
 function AnswerWithLinks({ answer, isDark }: { answer: string; isDark: boolean }) {
-  // Define keywords and their links
   const links: Record<string, string> = {
     "Security page": "/security",
     "Pricing page": "/pricing",
@@ -347,33 +362,44 @@ function AnswerWithLinks({ answer, isDark }: { answer: string; isDark: boolean }
     "features": "/features",
     "waitlist": "/#waitlist",
     "changelog": "/changelog",
+    "Eraco VS Claude Code": "/eraco-vs-claude-code",
+    "Eraco VS Anti Gravity": "/eraco-vs-antigravity",
+    "Eraco VS Standard LLMs": "/eraco-vs-llm",
   };
 
-  // Split answer and add links
-  const parts = answer.split(/(\s+)/);
+  const sortedKeys = Object.keys(links).sort((a, b) => b.length - a.length);
+  let elements: any[] = [answer];
+
+  sortedKeys.forEach((keyword) => {
+    const url = links[keyword];
+    const newElements: any[] = [];
+    
+    elements.forEach((el, index) => {
+      if (typeof el === 'string') {
+        const regex = new RegExp(`(${keyword})`, 'i');
+        const parts = el.split(regex);
+        
+        parts.forEach((part, i) => {
+          if (part.toLowerCase() === keyword.toLowerCase()) {
+            newElements.push(
+              <a key={`${keyword}-${index}-${i}`} href={url} className="text-orange-500 hover:underline font-medium">
+                {part}
+              </a>
+            );
+          } else if (part) {
+            newElements.push(part);
+          }
+        });
+      } else {
+        newElements.push(el);
+      }
+    });
+    elements = newElements;
+  });
 
   return (
-    <p className="leading-relaxed">
-      {parts.map((part, i) => {
-        // Check if this part matches any link keyword
-        const matchedLink = Object.keys(links).find(key =>
-          part.toLowerCase().includes(key.toLowerCase())
-        );
-
-        if (matchedLink) {
-          return (
-            <a
-              key={i}
-              href={links[matchedLink]}
-              className="text-orange-500 hover:underline font-medium"
-            >
-              {part}
-            </a>
-          );
-        }
-
-        return part;
-      })}
-    </p>
+    <div className="leading-relaxed">
+      {elements.map((el, i) => <span key={i}>{el}</span>)}
+    </div>
   );
 }
