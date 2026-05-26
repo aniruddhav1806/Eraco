@@ -38,6 +38,7 @@ export default function Hero() {
 
   // Use maxProgress so lid stays open once scrolled past
   const lidRotation = useTransform(maxProgress, [0, 0.2], [-90, 0]);
+  const laptopOpacity = useTransform(maxProgress, [0, 0.1], [0, 1]);
   const wingOpacity = useTransform(smoothProgress, [0, 0.1], [0, 1]);
   const wingScale = useTransform(smoothProgress, [0, 0.15], [0.8, 1]);
 
@@ -144,6 +145,7 @@ export default function Hero() {
               style={{
                 rotateX: lidRotation,
                 transformOrigin: 'bottom center',
+                opacity: laptopOpacity,
               }}
               className="relative z-10"
             >
@@ -151,12 +153,15 @@ export default function Hero() {
             </motion.div>
 
             {/* KEYBOARD */}
-            <div className="relative -mt-52 -translate-y-[50px]">
+            <motion.div
+              style={{ opacity: laptopOpacity }}
+              className="relative -mt-52 -translate-y-[50px]"
+            >
               <img
                 src="/assets/laptop keyboard layer.png"
                 className="w-full"
               />
-            </div>
+            </motion.div>
 
             {/* SHADOW */}
             <motion.div

@@ -41,7 +41,7 @@ export default function AboutPage() {
                 Privacy by Default
               </h2>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                All your data is encrypted end-to-end. Eraco only ever sees resource usage — nothing else.
+                All your data is TLS-encrypted. Eraco only ever sees resource usage — nothing else.
               </p>
             </div>
 

@@ -220,7 +220,7 @@ export default function FeaturesPage() {
               Everything <span className="text-orange-500">Eraco</span> can do
             </h1>
             <p className={`text-base md:text-lg max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-              Adaptive AI assistant with server-offloaded compute. Encrypted end-to-end — only resource usage is ever visible.
+              Adaptive AI assistant with server-offloaded compute. TLS-encrypted — only resource usage is ever visible.
             </p>
           </motion.div>
         </div>
