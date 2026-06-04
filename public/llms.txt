@@ -1,0 +1,32 @@
+# Eraco AI
+
+> Eraco is a personal AI assistant that handles the full spectrum of your digital life — music, files, code, debugging, media generation, in-app editing — all in one place, all running privately.
+
+Eraco runs tasks in the background without taking over your screen. Her compute is server-offloaded, so even modest hardware runs her smoothly. All user data is TLS-encrypted; Eraco only sees resource usage, nothing else.
+
+Her flagship feature is the **Adaptive Execution Engine** — she builds new execution paths for tasks she has never seen before, so users are never left without an answer.
+
+Eraco is currently in development and accepting waitlist signups.
+
+## Pages
+
+- [Home](https://eraco.vercel.app/): Overview, waitlist signup
+- [Features](https://eraco.vercel.app/features): Full feature breakdown including Adaptive Execution Engine, Teaching Mode, and background task execution
+- [Pricing](https://eraco.vercel.app/pricing): Free, Lite, Pro, and Creator tiers; B2B postpaid available
+- [About](https://eraco.vercel.app/about): Company vision, privacy model, founding team
+- [Security](https://eraco.vercel.app/security): Encryption, data handling, and privacy practices
+- [FAQ](https://eraco.vercel.app/faq): Common questions about Eraco's capabilities and availability
+- [Blog](https://eraco.vercel.app/blog): Product updates and articles
+- [Changelog](https://eraco.vercel.app/changelog): Version history and release notes
+- [Careers](https://eraco.vercel.app/careers): Open roles at Eraco
+- [Contact](https://eraco.vercel.app/contact): Reach the Eraco team
+- [Terms](https://eraco.vercel.app/terms): Terms of service
+
+## Comparisons
+
+- [Eraco vs ChatGPT](https://eraco.vercel.app/eraco-vs-chatgpt)
+- [Eraco vs Gemini](https://eraco.vercel.app/eraco-vs-gemini)
+- [Eraco vs Grok](https://eraco.vercel.app/eraco-vs-grok)
+- [Eraco vs Claude Code](https://eraco.vercel.app/eraco-vs-claude-code)
+- [Eraco vs LLMs (general)](https://eraco.vercel.app/eraco-vs-llm)
+- [Eraco vs Antigravity](https://eraco.vercel.app/eraco-vs-antigravity)
