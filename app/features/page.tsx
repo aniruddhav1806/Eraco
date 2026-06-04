@@ -169,7 +169,7 @@ function FeatureCard({ title, badge, badgeVariant, description, items, className
   return (
     <motion.div
       initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className={`rounded-2xl border p-6 transition-colors ${
@@ -231,7 +231,7 @@ export default function FeaturesPage() {
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className={`rounded-xl border-l-4 border-orange-500 p-5 ${
@@ -253,7 +253,7 @@ export default function FeaturesPage() {
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
@@ -264,7 +264,7 @@ export default function FeaturesPage() {
 
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className={`rounded-2xl border p-6 md:p-8 ${
@@ -292,7 +292,7 @@ export default function FeaturesPage() {
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, filter: 'blur(10px)', x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  whileInView={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: i * 0.05 }}
                   className="flex gap-3 items-start"
@@ -317,7 +317,7 @@ export default function FeaturesPage() {
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3 mb-6"
@@ -347,7 +347,7 @@ export default function FeaturesPage() {
 
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="mt-4"
@@ -369,7 +369,7 @@ export default function FeaturesPage() {
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3 mb-6"
@@ -385,7 +385,7 @@ export default function FeaturesPage() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
@@ -406,7 +406,7 @@ export default function FeaturesPage() {
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3 mb-6"
@@ -422,7 +422,7 @@ export default function FeaturesPage() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
@@ -443,7 +443,7 @@ export default function FeaturesPage() {
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
@@ -454,7 +454,7 @@ export default function FeaturesPage() {
 
           <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className={`rounded-2xl border-2 p-6 md:p-8 ${
@@ -472,7 +472,7 @@ export default function FeaturesPage() {
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, filter: 'blur(10px)', x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  whileInView={{ opacity: 1, filter: 'blur(0px)', x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: i * 0.1 }}
                   className="flex gap-3 items-start"

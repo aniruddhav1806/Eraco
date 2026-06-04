@@ -39,7 +39,7 @@ export default function EracoVsChatGPTPage() {
             <motion.div 
               className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
               initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
@@ -57,7 +57,7 @@ export default function EracoVsChatGPTPage() {
             <motion.div 
               className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
               initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
@@ -75,7 +75,7 @@ export default function EracoVsChatGPTPage() {
             <motion.div 
               className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
               initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
@@ -93,7 +93,7 @@ export default function EracoVsChatGPTPage() {
             <motion.div 
               className={`rounded-2xl p-8 mb-8 border-2 border-orange-500 ${isDark ? 'bg-gray-900' : 'bg-white'}`}
               initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
