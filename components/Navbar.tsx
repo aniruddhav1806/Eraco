@@ -47,7 +47,7 @@ export default function Navbar() {
           onClick={handleLogoClick}
           className="flex items-center gap-2 cursor-pointer flex-shrink-0"
         >
-          <img src="/assets/eraco-logo.png" className="w-6 h-6 md:w-7 md:h-7" />
+          <img src="/assets/eraco-logo.webp" loading="lazy" className="w-6 h-6 md:w-7 md:h-7" />
           <span className={`font-medium text-sm md:text-base ${isDark ? 'text-white' : 'text-black'}`}>
             Eraco
           </span>

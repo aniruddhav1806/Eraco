@@ -48,7 +48,22 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Eraco VS Standard LLMs (ChatGPT, Gemini, etc.)",
-    answer: "Standard LLMs wait for you to prompt them and generate text. Eraco operates in the background, autonomously taking action directly in your environment. Check out our Eraco VS Standard LLMs page for a detailed breakdown.",
+    answer: "Standard LLMs wait for you to prompt them and generate text. Eraco operates in the background, autonomously taking action directly in your environment. Check out our Eraco VS Standard LLMs page for a general breakdown, or see specific comparisons for ChatGPT, Gemini, and Grok.",
+    category: "Comparisons"
+  },
+  {
+    question: "Eraco VS ChatGPT: How do they compare?",
+    answer: "ChatGPT is a powerful conversational AI that waits for your prompts. Eraco operates in the background, autonomously taking action directly in your environment. Check out our Eraco VS ChatGPT page for a detailed breakdown.",
+    category: "Comparisons"
+  },
+  {
+    question: "Eraco VS Gemini: What's the difference?",
+    answer: "Gemini is Google's capable generative model, primarily interacting through chat and workspace apps. Eraco is a local, deep-system assistant that executes complex tasks silently on your machine. Check out our Eraco VS Gemini page for a detailed breakdown.",
+    category: "Comparisons"
+  },
+  {
+    question: "Eraco VS Grok: Which is better?",
+    answer: "Grok provides real-time information and conversational engagement. Eraco is designed for actual task completion and holistic digital management. Check out our Eraco VS Grok page for a detailed breakdown.",
     category: "Comparisons"
   },
   // Privacy & Security
@@ -199,16 +214,16 @@ export default function FAQPage() {
       <div ref={ref} className={`pt-32 pb-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'bg-white'}`}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+            animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-black'}`}
           >
             Frequently Asked Questions
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+            animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`text-lg md:text-xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
           >
@@ -222,8 +237,8 @@ export default function FAQPage() {
         <div className="max-w-4xl mx-auto">
           <motion.div
             className="flex flex-wrap gap-2 justify-center"
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 10 }}
+            animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <motion.button
@@ -246,8 +261,8 @@ export default function FAQPage() {
                 onClick={() => setSelectedCategory(cat)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, filter: 'blur(10px)', y: 10 }}
+                animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.35 + idx * 0.05 }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedCategory === cat
@@ -365,6 +380,9 @@ function AnswerWithLinks({ answer, isDark }: { answer: string; isDark: boolean }
     "Eraco VS Claude Code": "/eraco-vs-claude-code",
     "Eraco VS Anti Gravity": "/eraco-vs-antigravity",
     "Eraco VS Standard LLMs": "/eraco-vs-llm",
+    "Eraco VS ChatGPT": "/eraco-vs-chatgpt",
+    "Eraco VS Gemini": "/eraco-vs-gemini",
+    "Eraco VS Grok": "/eraco-vs-grok",
   };
 
   const sortedKeys = Object.keys(links).sort((a, b) => b.length - a.length);

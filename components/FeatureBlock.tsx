@@ -13,16 +13,16 @@ export default function FeatureBlock() {
       <div ref={ref} className="max-w-6xl mx-auto">
         {/* Product Introduction - What is Eraco */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 60 }}
+          animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
           className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 mb-12 md:mb-20"
         >
           <div className="p-6 sm:p-8 md:p-12 lg:p-16">
             {/* What is Eraco */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
               transition={{ duration: 0.8 }}
               className="text-center mb-8 md:mb-12"
             >
@@ -67,8 +67,8 @@ export default function FeatureBlock() {
               ].map((feature, index) => (
                 <motion.div
                   key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+                  animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-colors duration-300"
                 >
@@ -85,8 +85,8 @@ export default function FeatureBlock() {
 
             {/* Links to Features and Changelog */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-center"
             >
@@ -119,16 +119,16 @@ export default function FeatureBlock() {
 
         {/* Feature Block - Adaptive Execution Engine */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 60 }}
+          animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.3 }}
           className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 mb-12 md:mb-20"
         >
           <div className="p-6 sm:p-8 md:p-12 lg:p-16">
             {/* Main Heading */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
               transition={{ duration: 0.8 }}
               className="text-center mb-8 md:mb-12"
             >
@@ -138,7 +138,12 @@ export default function FeatureBlock() {
             </motion.div>
 
             {/* Lead Statement */}
-            <div className="text-center mb-8 md:mb-12">
+            <motion.div
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-center mb-8 md:mb-12"
+            >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 dark:text-white leading-snug max-w-4xl mx-auto">
                 This isn&apos;t automation.
                 <br />
@@ -146,42 +151,67 @@ export default function FeatureBlock() {
                   This is evolution.
                 </span>
               </p>
-            </div>
+            </motion.div>
 
             {/* Paragraph 1 - AEE introduction */}
-            <div className="max-w-3xl mx-auto text-center mb-6 md:mb-8">
+            <motion.div
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-3xl mx-auto text-center mb-6 md:mb-8"
+            >
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 The <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent font-semibold">Adaptive Execution Engine</span> is the intelligence layer that sits beneath everything Eraco does.
               </p>
-            </div>
+            </motion.div>
 
             {/* Paragraph 2 - How it differs */}
-            <div className="max-w-3xl mx-auto text-center mb-6 md:mb-8">
+            <motion.div
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="max-w-3xl mx-auto text-center mb-6 md:mb-8"
+            >
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 Most AI systems operate within fixed pipelines — they recognize known tasks and follow hardcoded sequences. The <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent font-semibold">AEE</span> is architecturally different. It understands intent, not just instructions, routing each task through the most efficient execution path available.
               </p>
-            </div>
+            </motion.div>
 
             {/* Paragraph 3 - Novel tasks */}
-            <div className="max-w-3xl mx-auto text-center mb-6 md:mb-8">
+            <motion.div
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="max-w-3xl mx-auto text-center mb-6 md:mb-8"
+            >
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 When the <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent font-semibold">Adaptive Execution Engine</span> encounters something entirely new, it doesn&apos;t stall or fail. It synthesizes a path in real time, assembling the right capabilities on the fly — then stores that path permanently. Every novel task makes the system more capable for the next one.
               </p>
-            </div>
+            </motion.div>
 
             {/* Paragraph 4 - Background */}
-            <div className="max-w-3xl mx-auto text-center mb-6 md:mb-8">
+            <motion.div
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="max-w-3xl mx-auto text-center mb-6 md:mb-8"
+            >
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 All of this runs server-side, in the background, without ever interrupting what you&apos;re doing. The result reaches you quietly. The work happened — you just didn&apos;t have to watch it.
               </p>
-            </div>
+            </motion.div>
 
             {/* Paragraph 5 - Compounding */}
-            <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+            <motion.div
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="max-w-3xl mx-auto text-center mb-8 md:mb-12"
+            >
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 This is a system that compounds. What starts as a capable assistant becomes, over time, something that knows your workflows, anticipates your needs, and handles complexity that would have stopped it before.
               </p>
-            </div>
+            </motion.div>
 
             {/* Supporting Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-6 md:pt-8">
@@ -216,8 +246,8 @@ export default function FeatureBlock() {
               ].map((feature, index) => (
                 <motion.div
                   key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+                  animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   className="text-center p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:border-orange-500/50 transition-colors duration-300"
                 >
@@ -237,16 +267,16 @@ export default function FeatureBlock() {
 
         {/* Video Sections Block */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 60 }}
+          animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.4 }}
           className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800"
         >
           <div className="p-6 sm:p-8 md:p-12 lg:p-16">
             {/* Product Video Section - SaaS Explainer */}
             <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 60 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div className="text-center mb-8 md:mb-12">
@@ -289,8 +319,8 @@ export default function FeatureBlock() {
 
             {/* Demo Video Section */}
             <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 60 }}
+              animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="mt-8 md:mt-16"
             >

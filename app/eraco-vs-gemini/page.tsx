@@ -6,7 +6,7 @@ import { useTheme } from '@/components/ThemeProvider';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function EracoVsClaudeCodePage() {
+export default function EracoVsGeminiPage() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -23,10 +23,10 @@ export default function EracoVsClaudeCodePage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-black'}`}>
-            Eraco AI <span className="text-orange-500">vs</span> Claude Code
+            Eraco AI <span className="text-orange-500">vs</span> Gemini
           </h1>
           <p className={`text-lg md:text-xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            Why Eraco is the better choice for an integrated, all-in-one personalized experience.
+            Comparing Eraco's localized execution against Google's multi-modal ecosystem model.
           </p>
         </motion.div>
       </div>
@@ -44,13 +44,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Scope of Capabilities
+                Ecosystem Integration
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Focused purely on terminal-based AI coding. It lives in your CLI, helping you search codebases and write scripts, but it doesn't step outside of that domain.
+                <strong>Gemini:</strong> Built to integrate smoothly with Google Workspace (Docs, Sheets, Gmail, etc.) but remains largely constrained within cloud applications and web interfaces.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> A full-spectrum personal assistant. Eraco handles your code and debugging, but also manages your music, files, media generation, and in-app editing. It's a presence that manages your entire digital life, not just your terminal.
+                <strong>Eraco AI:</strong> Built to integrate with your actual computer. Eraco interfaces directly with your local system, terminal, and local applications—managing files and processes that exist outside the cloud.
               </p>
             </motion.div>
 
@@ -62,13 +62,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Adaptive Execution Engine
+                Task Autonomy
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Follows standard agentic coding procedures and requires explicit instructions within its supported terminal environment.
+                <strong>Gemini:</strong> Operates primarily on a prompt-and-response loop. You ask it to summarize a document, and it provides text you must review and apply.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Doesn't just follow instructions — she builds new execution paths for tasks she has never seen before. When faced with a new challenge, Eraco adapts dynamically, ensuring you're never left without an answer.
+                <strong>Eraco AI:</strong> Features an Adaptive Execution Engine. You assign a complex goal, and Eraco will independently plan, execute, and verify the multi-step process in your local environment.
               </p>
             </motion.div>
 
@@ -80,31 +80,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Privacy & Architecture
+                Development & Coding
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Relies entirely on Anthropic's cloud infrastructure, sending your codebase context to remote servers to function.
+                <strong>Gemini:</strong> Offers strong coding assistance via chat, useful for generating scripts or explaining logic, but lacks direct access to your local build environment.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Built with Privacy by Default. All data is TLS-encrypted. While compute is intelligently server-offloaded, Eraco incorporates an in-house mini server for testing and backup, remaining resilient and private.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
-              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Silent Background Presence
-              </h2>
-              <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Requires constant terminal interaction, interrupting your focus to respond to prompts and questions.
-              </p>
-              <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Operates silently, never disturbing you unnecessarily. She intelligently plans her every step and manages your whole digital life in the background, becoming a seamless part of your workflow.
+                <strong>Eraco AI:</strong> Functions as a pair programmer with agency. It can review your local repository, run tests, fix syntax errors, and refactor code natively in your workflow.
               </p>
             </motion.div>
 
@@ -113,13 +95,13 @@ export default function EracoVsClaudeCodePage() {
               initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
                 The Verdict
               </h2>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                If you just want a tool that lives in your terminal to write code, Claude Code is a capable utility. But if you want a complete, adaptive AI presence that handles your development environment alongside the rest of your digital workflow—all with a premium, seamless interface—Eraco AI is the undisputed choice.
+                If your entire workflow exists within Google Workspace, Gemini is highly effective. But if you are a developer, creator, or power user who works with local files, custom environments, and needs autonomous task execution, Eraco AI is vastly superior.
               </p>
             </motion.div>
             

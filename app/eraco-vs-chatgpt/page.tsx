@@ -6,7 +6,7 @@ import { useTheme } from '@/components/ThemeProvider';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function EracoVsClaudeCodePage() {
+export default function EracoVsChatGPTPage() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -23,10 +23,10 @@ export default function EracoVsClaudeCodePage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-black'}`}>
-            Eraco AI <span className="text-orange-500">vs</span> Claude Code
+            Eraco AI <span className="text-orange-500">vs</span> ChatGPT
           </h1>
           <p className={`text-lg md:text-xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            Why Eraco is the better choice for an integrated, all-in-one personalized experience.
+            Comparing Eraco's active execution engine against OpenAI's conversational interface.
           </p>
         </motion.div>
       </div>
@@ -44,13 +44,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Scope of Capabilities
+                Interaction Paradigm
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Focused purely on terminal-based AI coding. It lives in your CLI, helping you search codebases and write scripts, but it doesn't step outside of that domain.
+                <strong>ChatGPT:</strong> Highly conversational and reactive. You must open a browser tab or app, type a prompt, wait for a response, and then manually act upon the information or code provided.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> A full-spectrum personal assistant. Eraco handles your code and debugging, but also manages your music, files, media generation, and in-app editing. It's a presence that manages your entire digital life, not just your terminal.
+                <strong>Eraco AI:</strong> Proactive and actionable. Eraco operates in the background, capable of understanding tasks and executing them directly in your environment without needing constant back-and-forth chatting.
               </p>
             </motion.div>
 
@@ -62,13 +62,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Adaptive Execution Engine
+                Context & Environment
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Follows standard agentic coding procedures and requires explicit instructions within its supported terminal environment.
+                <strong>ChatGPT:</strong> Confined to its chat interface. It only knows what you explicitly paste into it, requiring you to constantly provide context about your files, code, or current tasks.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Doesn't just follow instructions — she builds new execution paths for tasks she has never seen before. When faced with a new challenge, Eraco adapts dynamically, ensuring you're never left without an answer.
+                <strong>Eraco AI:</strong> Deeply integrated with your system. Eraco has access to your local files, directories, and tasks (when permitted), allowing it to contextually assist you without needing manual copy-pasting.
               </p>
             </motion.div>
 
@@ -80,31 +80,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Privacy & Architecture
+                Actionable Capabilities
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Relies entirely on Anthropic's cloud infrastructure, sending your codebase context to remote servers to function.
+                <strong>ChatGPT:</strong> Excellent at generating text, brainstorming, and writing code snippets, but it cannot run commands in your terminal or organize your local folders automatically.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Built with Privacy by Default. All data is TLS-encrypted. While compute is intelligently server-offloaded, Eraco incorporates an in-house mini server for testing and backup, remaining resilient and private.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
-              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Silent Background Presence
-              </h2>
-              <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Requires constant terminal interaction, interrupting your focus to respond to prompts and questions.
-              </p>
-              <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Operates silently, never disturbing you unnecessarily. She intelligently plans her every step and manages your whole digital life in the background, becoming a seamless part of your workflow.
+                <strong>Eraco AI:</strong> A full-spectrum assistant. From editing files and managing media to debugging code directly in your IDE, Eraco is built to autonomously execute multi-step workflows.
               </p>
             </motion.div>
 
@@ -113,13 +95,13 @@ export default function EracoVsClaudeCodePage() {
               initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
                 The Verdict
               </h2>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                If you just want a tool that lives in your terminal to write code, Claude Code is a capable utility. But if you want a complete, adaptive AI presence that handles your development environment alongside the rest of your digital workflow—all with a premium, seamless interface—Eraco AI is the undisputed choice.
+                ChatGPT is the ultimate chatbot for generating ideas and content. However, if you want an AI that moves beyond chatting to become a seamless, executing partner in your daily digital workflow, Eraco AI is the clear choice.
               </p>
             </motion.div>
             

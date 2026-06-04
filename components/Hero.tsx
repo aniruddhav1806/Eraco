@@ -4,12 +4,12 @@ import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'fram
 import { useRef, useEffect } from 'react';
 
 const wingImages = [
-  '/assets/File management.png',
-  '/assets/File management (1).png',
-  '/assets/File management (2).png',
-  '/assets/File management (3).png',
-  '/assets/File management (4).png',
-  '/assets/File management (5).png',
+  '/assets/File management.webp',
+  '/assets/File management (1).webp',
+  '/assets/File management (2).webp',
+  '/assets/File management (3).webp',
+  '/assets/File management (4).webp',
+  '/assets/File management (5).webp',
 ];
 
 export default function Hero() {
@@ -72,8 +72,8 @@ export default function Hero() {
       {/* TEXT */}
       <div className="relative z-10 text-center px-4 mb-8">
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-eraco-black dark:text-white mb-4 md:mb-6"
         >
@@ -85,8 +85,8 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-base sm:text-lg md:text-xl text-gray-500 max-w-xl mx-auto px-2"
         >
@@ -97,18 +97,10 @@ export default function Hero() {
       {/* LAPTOP */}
       <div className="relative w-full px-4 mt-8 md:mt-10">
 
-        {/* Mobile: Static laptop image with wings behind */}
+        {/* Mobile: Static laptop image */}
         <div className="md:hidden relative mx-auto max-w-lg">
-          {/* WINGS - Behind laptop */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-            <div className="grid grid-cols-3 gap-1">
-              {wingImages.map((src) => (
-                <img key={src} src={src} className="w-12 h-12 object-contain opacity-70" />
-              ))}
-            </div>
-          </div>
           {/* Static laptop image */}
-          <img src="/assets/whole laptop.png" alt="Eraco Laptop" className="w-full relative z-10" />
+          <img src="/assets/whole laptop.webp" loading="lazy" alt="Eraco Laptop" className="w-full relative z-10" />
         </div>
 
         {/* Desktop: Animated laptop with wings */}
@@ -126,7 +118,7 @@ export default function Hero() {
                   style={{ x: t.x, y: t.y, rotate: t.rotate, opacity: t.opacity }}
                   className="absolute"
                 >
-                  <img src={src} className="w-48" />
+                  <img src={src} loading="lazy" className="w-48" />
                 </motion.div>
               );
             })}
@@ -149,7 +141,7 @@ export default function Hero() {
               }}
               className="relative z-10"
             >
-              <img src="/assets/laptop lid layer.png" className="w-full" />
+              <img src="/assets/laptop lid layer.webp" loading="lazy" className="w-full" />
             </motion.div>
 
             {/* KEYBOARD */}
@@ -158,7 +150,8 @@ export default function Hero() {
               className="relative -mt-52 -translate-y-[50px]"
             >
               <img
-                src="/assets/laptop keyboard layer.png"
+                src="/assets/laptop keyboard layer.webp"
+                loading="lazy"
                 className="w-full"
               />
             </motion.div>

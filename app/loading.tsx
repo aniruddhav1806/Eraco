@@ -127,6 +127,32 @@ export default function Loading() {
           border-radius: 0 0 8px 8px;
           margin: 0 auto;
         }
+
+        /* ── DARK MODE ── */
+        .dark .eraco-skeleton {
+          background-color: #0a0a0a;
+        }
+        .dark .sk {
+          background: linear-gradient(
+            90deg,
+            #171717 25%,
+            #262626 50%,
+            #171717 75%
+          );
+        }
+        .dark .skel-nav {
+          background: rgba(10,10,10,0.85);
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .dark .skel-laptop-screen {
+          border: 2px solid #262626;
+        }
+        .dark .skel-laptop-base {
+          background: #1f1f1f;
+        }
+        .dark .skel-laptop-notch {
+          background: #333333;
+        }
       `}</style>
 
       {/* ── NAVBAR ── */}

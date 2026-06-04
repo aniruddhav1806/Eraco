@@ -32,8 +32,8 @@ export default function AdaptiveEngine() {
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading (can change with theme) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+          animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
@@ -44,8 +44,8 @@ export default function AdaptiveEngine() {
 
         {/* ✅ CONSTANT BLOCK */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 40 }}
+          animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-gradient-to-br from-gray-100 to-gray-50
           rounded-3xl p-12 md:p-16 shadow-soft
@@ -114,8 +114,8 @@ export default function AdaptiveEngine() {
             ].map((feature, index) => (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+                animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 className="text-center p-6 rounded-2xl 
                 bg-white/70 backdrop-blur-sm 

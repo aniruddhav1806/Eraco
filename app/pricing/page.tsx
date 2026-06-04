@@ -46,7 +46,7 @@ export default function PricingPage() {
       <div ref={heroRef} className={`pt-32 pb-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-black'}`}
@@ -54,7 +54,7 @@ export default function PricingPage() {
             Simple, Transparent Pricing
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`text-lg md:text-xl max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
@@ -68,7 +68,7 @@ export default function PricingPage() {
       <section ref={consumerRef} className={`py-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'orange-glow-bg'}`}>
         <div className="max-w-7xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
             animate={consumerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className={`text-3xl md:text-4xl font-bold text-center mb-4 ${isDark ? 'text-white' : 'text-black'}`}
@@ -76,7 +76,7 @@ export default function PricingPage() {
             Consumer Plans
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
             animate={consumerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`text-center mb-12 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
@@ -88,7 +88,7 @@ export default function PricingPage() {
             {consumerPlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, filter: 'blur(10px)', y: 40 }}
                 animate={consumerInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 className={`relative rounded-2xl p-6 transition-all duration-300 hover:scale-105 ${
@@ -182,7 +182,7 @@ export default function PricingPage() {
       <section ref={addonsRef} className={`py-20 px-4 md:px-6 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
             animate={addonsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className={`text-3xl md:text-4xl font-bold text-center mb-4 ${isDark ? 'text-white' : 'text-black'}`}
@@ -190,7 +190,7 @@ export default function PricingPage() {
             Add-on Credit Packs
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
             animate={addonsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`text-center mb-12 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
@@ -202,7 +202,7 @@ export default function PricingPage() {
             {creditPacks.map((pack, index) => (
               <motion.div
                 key={pack.name}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, filter: 'blur(10px)', y: 40 }}
                 animate={addonsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 className={`rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 ${
@@ -239,7 +239,7 @@ export default function PricingPage() {
       <section ref={businessRef} className={`py-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
             animate={businessInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className={`text-3xl md:text-4xl font-bold text-center mb-4 ${isDark ? 'text-white' : 'text-black'}`}
@@ -247,7 +247,7 @@ export default function PricingPage() {
             Business & Enterprise
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
             animate={businessInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`text-center mb-12 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
@@ -259,7 +259,7 @@ export default function PricingPage() {
             {businessPlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, filter: 'blur(10px)', y: 40 }}
                 animate={businessInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
                 className={`relative rounded-2xl p-8 ${

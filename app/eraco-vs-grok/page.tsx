@@ -6,7 +6,7 @@ import { useTheme } from '@/components/ThemeProvider';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function EracoVsClaudeCodePage() {
+export default function EracoVsGrokPage() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -23,10 +23,10 @@ export default function EracoVsClaudeCodePage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-black'}`}>
-            Eraco AI <span className="text-orange-500">vs</span> Claude Code
+            Eraco AI <span className="text-orange-500">vs</span> Grok
           </h1>
           <p className={`text-lg md:text-xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            Why Eraco is the better choice for an integrated, all-in-one personalized experience.
+            Comparing Eraco's deep system integration against xAI's real-time, socially-connected assistant.
           </p>
         </motion.div>
       </div>
@@ -44,13 +44,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Scope of Capabilities
+                Core Focus
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Focused purely on terminal-based AI coding. It lives in your CLI, helping you search codebases and write scripts, but it doesn't step outside of that domain.
+                <strong>Grok:</strong> Focused on real-time information retrieval, witty conversations, and processing live data from X (formerly Twitter). It excels at answering questions about current events.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> A full-spectrum personal assistant. Eraco handles your code and debugging, but also manages your music, files, media generation, and in-app editing. It's a presence that manages your entire digital life, not just your terminal.
+                <strong>Eraco AI:</strong> Focused on getting work done. Eraco is a utility-driven, background operator designed to execute tasks, organize files, and manage your digital workflow directly on your machine.
               </p>
             </motion.div>
 
@@ -62,13 +62,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Adaptive Execution Engine
+                Information vs. Execution
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Follows standard agentic coding procedures and requires explicit instructions within its supported terminal environment.
+                <strong>Grok:</strong> An advanced search and synthesis engine. You ask what is happening right now, and Grok summarizes the feed.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Doesn't just follow instructions — she builds new execution paths for tasks she has never seen before. When faced with a new challenge, Eraco adapts dynamically, ensuring you're never left without an answer.
+                <strong>Eraco AI:</strong> An execution engine. You ask Eraco to rename a batch of 100 media files based on their content, and it completes the action locally without requiring manual intervention.
               </p>
             </motion.div>
 
@@ -80,31 +80,13 @@ export default function EracoVsClaudeCodePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Privacy & Architecture
+                Workflow Presence
               </h2>
               <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Relies entirely on Anthropic's cloud infrastructure, sending your codebase context to remote servers to function.
+                <strong>Grok:</strong> Resides in a web interface or app. You must actively navigate to Grok to utilize it.
               </p>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Built with Privacy by Default. All data is TLS-encrypted. While compute is intelligently server-offloaded, Eraco incorporates an in-house mini server for testing and backup, remaining resilient and private.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
-              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
-                Silent Background Presence
-              </h2>
-              <p className={`text-base md:text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Claude Code:</strong> Requires constant terminal interaction, interrupting your focus to respond to prompts and questions.
-              </p>
-              <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                <strong>Eraco AI:</strong> Operates silently, never disturbing you unnecessarily. She intelligently plans her every step and manages your whole digital life in the background, becoming a seamless part of your workflow.
+                <strong>Eraco AI:</strong> Functions silently in the background of your operating system. It observes when needed, integrates into your IDE, and acts without breaking your state of flow.
               </p>
             </motion.div>
 
@@ -113,13 +95,13 @@ export default function EracoVsClaudeCodePage() {
               initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-black'}`}>
                 The Verdict
               </h2>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                If you just want a tool that lives in your terminal to write code, Claude Code is a capable utility. But if you want a complete, adaptive AI presence that handles your development environment alongside the rest of your digital workflow—all with a premium, seamless interface—Eraco AI is the undisputed choice.
+                If you want up-to-the-second news synthesis with a rebellious personality, Grok is perfect. But if you want a reliable, quiet assistant that can actually handle your files, write your code, and organize your system, Eraco AI is the tool you need.
               </p>
             </motion.div>
             

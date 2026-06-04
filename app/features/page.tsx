@@ -168,7 +168,7 @@ function FeatureCard({ title, badge, badgeVariant, description, items, className
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
@@ -212,8 +212,8 @@ export default function FeaturesPage() {
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+            animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <h1 className={`font-bold text-4xl md:text-5xl lg:text-6xl mb-6 ${isDark ? 'text-white' : 'text-black'}`}>
@@ -230,7 +230,7 @@ export default function FeaturesPage() {
       <section className="px-4 pb-16">
         <div className="max-w-3xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -252,7 +252,7 @@ export default function FeaturesPage() {
       <section className="px-4 py-12 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -263,7 +263,7 @@ export default function FeaturesPage() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -291,7 +291,7 @@ export default function FeaturesPage() {
               {features.videoEditor.items.map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: -10 }}
+                  initial={{ opacity: 0, filter: 'blur(10px)', x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: i * 0.05 }}
@@ -316,7 +316,7 @@ export default function FeaturesPage() {
       <section className="px-4 py-12 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -346,7 +346,7 @@ export default function FeaturesPage() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -368,7 +368,7 @@ export default function FeaturesPage() {
       <section className="px-4 py-12 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -384,7 +384,7 @@ export default function FeaturesPage() {
             {features.aiCreation.cards.map((card, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
@@ -405,7 +405,7 @@ export default function FeaturesPage() {
       <section className="px-4 py-12 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -421,7 +421,7 @@ export default function FeaturesPage() {
             {features.offline.cards.map((card, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
@@ -442,7 +442,7 @@ export default function FeaturesPage() {
       <section className="px-4 py-12 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -453,7 +453,7 @@ export default function FeaturesPage() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -471,7 +471,7 @@ export default function FeaturesPage() {
               {features.engine.items.map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: -10 }}
+                  initial={{ opacity: 0, filter: 'blur(10px)', x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: i * 0.1 }}

@@ -54,8 +54,8 @@ export default function Waitlist() {
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+          animate={isInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black dark:text-white mb-4 md:mb-6">

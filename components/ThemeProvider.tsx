@@ -62,8 +62,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        // S-curve — sluggish start, smooth glide, gentle settle
-        overlay.style.transition = 'clip-path 2500ms cubic-bezier(0.45, 0, 0.55, 1)';
+        // Pronounced S-curve — very sluggish start, fast smooth glide, very gentle settle
+        overlay.style.transition = 'clip-path 2500ms cubic-bezier(0.8, 0, 0.2, 1)';
         overlay.style.clipPath = `circle(${maxRadius * 2}px at ${cx}px ${cy}px)`;
       });
     });
@@ -71,8 +71,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Theme switches at the halfway point so content is hidden under the overlay
     setTimeout(() => {
       setTheme(destinationTheme);
-      // Slow fade
-      overlay.style.transition = 'opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1)';
+      // Slow fade with matching S-curve
+      overlay.style.transition = 'opacity 1200ms cubic-bezier(0.8, 0, 0.2, 1)';
       overlay.style.opacity = '0';
     }, 1400);
 

@@ -160,6 +160,11 @@ body {
   .no-pull-to-refresh {
     overscroll-behavior-y: contain;
   }
+
+  /* Disable framer-motion motion blur on mobile for performance */
+  [style*="filter: blur"] {
+    filter: none !important;
+  }
 }
 
 .light {

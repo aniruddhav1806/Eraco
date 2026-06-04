@@ -15,8 +15,8 @@ export default function ContactPage() {
 
       <main className="max-w-3xl mx-auto px-6 py-16 pt-32">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <h1 className={`text-4xl font-bold mb-8 ${isLight ? 'text-eraco-black' : 'text-white'}`}>Contact Us</h1>

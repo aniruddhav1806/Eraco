@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <img src="/assets/eraco-logo.png" alt="Eraco" className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0 object-contain" />
+              <img src="/assets/eraco-logo.webp" loading="lazy" alt="Eraco" className="w-7 h-7 md:w-8 md:h-8 flex-shrink-0 object-contain" />
               <span className="font-semibold text-base md:text-lg">Eraco</span>
             </a>
             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">

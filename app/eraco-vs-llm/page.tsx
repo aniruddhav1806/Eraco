@@ -18,8 +18,8 @@ export default function EracoVsLLMPage() {
       <div className={`pt-32 pb-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'bg-white'}`}>
         <motion.div 
           className="max-w-4xl mx-auto text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-black'}`}>
@@ -38,7 +38,7 @@ export default function EracoVsLLMPage() {
             
             <motion.div 
               className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -56,7 +56,7 @@ export default function EracoVsLLMPage() {
 
             <motion.div 
               className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -74,7 +74,7 @@ export default function EracoVsLLMPage() {
 
             <motion.div 
               className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -92,7 +92,7 @@ export default function EracoVsLLMPage() {
 
             <motion.div 
               className={`rounded-2xl p-8 mb-8 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -110,7 +110,7 @@ export default function EracoVsLLMPage() {
 
             <motion.div 
               className={`rounded-2xl p-8 mb-8 border-2 border-orange-500 ${isDark ? 'bg-gray-900' : 'bg-white'}`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
