@@ -49,6 +49,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/compare" className={`text-sm transition-colors ${isActive('/compare') ? activeClass : 'text-gray-600 dark:text-gray-400 hover:text-orange-500'}`}>
+                  Compare
+                </a>
+              </li>
+              <li>
                 <a href="/changelog" className={`text-sm transition-colors ${isActive('/changelog') ? activeClass : 'text-gray-600 dark:text-gray-400 hover:text-orange-500'}`}>
                   Changelog
                 </a>

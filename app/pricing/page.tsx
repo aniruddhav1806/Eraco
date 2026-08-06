@@ -1,6 +1,5 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/components/ThemeProvider';
 import { motion, useInView } from 'framer-motion';
@@ -40,7 +39,6 @@ export default function PricingPage() {
 
   return (
     <main className="min-h-screen">
-      <Navbar />
 
       {/* Hero Section */}
       <div ref={heroRef} className={`pt-32 pb-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'bg-white'}`}>

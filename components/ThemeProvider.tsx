@@ -12,25 +12,40 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<Theme>('dark');
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const saved = localStorage.getItem('theme') as Theme | null;
-    if (saved) {
+    if (saved === 'light' || saved === 'dark') {
       setTheme(saved);
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(saved);
+    } else {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme: Theme = prefersDark ? 'dark' : 'light';
+      setTheme(initialTheme);
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(initialTheme);
+    }
+
+    // Listen to system theme preference changes if user hasn't explicitly set a preference
+    const mediaQuery = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      const manualSaved = localStorage.getItem('theme');
+      if (!manualSaved) {
+        const nextTheme: Theme = e.matches ? 'dark' : 'light';
+        setTheme(nextTheme);
+        document.documentElement.classList.remove('light', 'dark');
+        document.documentElement.classList.add(nextTheme);
+      }
+    };
+
+    if (mediaQuery?.addEventListener) {
+      mediaQuery.addEventListener('change', handleSystemThemeChange);
+      return () => mediaQuery.removeEventListener('change', handleSystemThemeChange);
     }
   }, []);
-
-  useEffect(() => {
-    if (mounted) {
-      localStorage.setItem('theme', theme);
-      document.documentElement.classList.remove('light', 'dark');
-      document.documentElement.classList.add(theme);
-    }
-  }, [theme, mounted]);
 
   const toggleTheme = useCallback(() => {
     if (isAnimating) return;
@@ -44,10 +59,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const maxRadius = Math.hypot(Math.max(cx, window.innerWidth - cx), Math.max(cy, window.innerHeight - cy)) * 2;
 
     const isDarkToLight = theme === 'dark';
-    const destinationTheme = isDarkToLight ? 'light' : 'dark';
+    const destinationTheme: Theme = isDarkToLight ? 'light' : 'dark';
     const rippleColor = isDarkToLight ? '#ffffff' : '#0a0a0a';
-
-    const rippleLayer = document.querySelector('.ripple-layer') as HTMLElement;
 
     // Create overlay in destination color
     const overlay = document.createElement('div');
@@ -62,7 +75,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        // Pronounced S-curve — very sluggish start, fast smooth glide, very gentle settle
         overlay.style.transition = 'clip-path 2500ms cubic-bezier(0.8, 0, 0.2, 1)';
         overlay.style.clipPath = `circle(${maxRadius * 2}px at ${cx}px ${cy}px)`;
       });
@@ -70,8 +82,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     // Theme switches at the halfway point so content is hidden under the overlay
     setTimeout(() => {
+      localStorage.setItem('theme', destinationTheme);
       setTheme(destinationTheme);
-      // Slow fade with matching S-curve
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(destinationTheme);
       overlay.style.transition = 'opacity 1200ms cubic-bezier(0.8, 0, 0.2, 1)';
       overlay.style.opacity = '0';
     }, 1400);
@@ -81,10 +95,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       setIsAnimating(false);
     }, 3700);
   }, [theme, isAnimating]);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

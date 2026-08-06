@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useTheme } from '@/components/ThemeProvider';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function SecurityPage() {
@@ -12,8 +11,6 @@ export default function SecurityPage() {
 
   return (
     <div className={`min-h-screen ${isLight ? 'bg-white text-eraco-black' : 'bg-eraco-black text-white'}`}>
-      <Navbar />
-
       {/* Content */}
       <main className="max-w-3xl mx-auto px-6 py-16 pt-32">
         <motion.div

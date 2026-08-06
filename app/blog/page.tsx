@@ -1,6 +1,5 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/components/ThemeProvider';
 
@@ -10,8 +9,6 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen">
-      <Navbar />
-
       {/* Hero Section */}
       <div className={`pt-32 pb-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'bg-white'}`}>
         <div className="max-w-4xl mx-auto text-center">

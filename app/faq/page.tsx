@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/components/ThemeProvider';
 import { motion, useInView } from 'framer-motion';
@@ -208,8 +207,6 @@ export default function FAQPage() {
 
   return (
     <main className={`min-h-screen ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}>
-      <Navbar />
-
       {/* Hero Section */}
       <div ref={ref} className={`pt-32 pb-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'bg-white'}`}>
         <div className="max-w-4xl mx-auto text-center">

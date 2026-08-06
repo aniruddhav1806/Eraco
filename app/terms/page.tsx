@@ -1,41 +1,26 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useTheme } from '@/components/ThemeProvider';
 import Footer from '@/components/Footer';
 
 export default function TermsPage() {
-  return (
-    <div className="min-h-screen bg-eraco-black text-white">
-      {/* Header */}
-      <header className="border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">E</span>
-            </div>
-            <span className="font-semibold text-lg">Eraco</span>
-          </Link>
-          <Link
-            href="/"
-            className="text-gray-400 hover:text-white transition-colors text-sm"
-          >
-            Back to Home
-          </Link>
-        </div>
-      </header>
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
 
+  return (
+    <div className={`min-h-screen ${isLight ? 'bg-white text-eraco-black' : 'bg-eraco-black text-white'}`}>
       {/* Content */}
-      <main className="max-w-3xl mx-auto px-6 py-16">
+      <main className="max-w-3xl mx-auto px-6 py-16 pt-32">
         <motion.div
           initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
           animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-bold mb-2">Terms and Conditions</h1>
-          <p className="text-gray-400 mb-8">Effective Date: 4 April 2026</p>
+          <h1 className={`text-4xl font-bold mb-2 ${isLight ? 'text-eraco-black' : 'text-white'}`}>Terms and Conditions</h1>
+          <p className={`mb-8 ${isLight ? 'text-gray-500' : 'text-gray-400'}`}>Effective Date: 4 April 2026</p>
 
-          <div className="prose prose-invert prose-lg">
+          <div className={`prose prose-lg max-w-none ${isLight ? 'prose-headings:text-black text-gray-700' : 'prose-invert prose-headings:text-white text-gray-300'}`}>
             <h2 className="text-2xl font-semibold mt-8 mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-300 leading-relaxed">
               By accessing or using Eraco, you agree to be bound by these Terms and Conditions. If you do not agree, you must discontinue use immediately.

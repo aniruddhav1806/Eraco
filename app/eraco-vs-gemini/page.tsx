@@ -1,6 +1,5 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/components/ThemeProvider';
 import Link from 'next/link';
@@ -12,8 +11,6 @@ export default function EracoVsGeminiPage() {
 
   return (
     <main className="min-h-screen">
-      <Navbar />
-
       {/* Hero Section */}
       <div className={`pt-32 pb-20 px-4 md:px-6 ${isDark ? 'bg-black' : 'bg-white'}`}>
         <motion.div 

@@ -33,7 +33,7 @@ export default function Navbar() {
   const isDark = theme === 'dark';
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-[calc(100vw-2rem)] md:max-w-5xl">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-[100] w-full max-w-[calc(100vw-2rem)] md:max-w-5xl">
       <div
         className={`flex items-center justify-between px-4 py-2.5 md:px-6 md:py-3
         rounded-full transition-all duration-300 backdrop-blur-xl
@@ -63,6 +63,9 @@ export default function Navbar() {
           </a>
           <a href="/pricing" className={`hover:opacity-100 opacity-80 transition ${isActive('/pricing') ? activeClass : ''}`}>
             Pricing
+          </a>
+          <a href="/compare" className={`hover:opacity-100 opacity-80 transition ${isActive('/compare') ? activeClass : ''}`}>
+            Compare
           </a>
           <a href="/#engine" className={`hover:opacity-100 opacity-80 transition ${pathname === '/' ? activeClass : ''}`}>
             Technology

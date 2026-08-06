@@ -1,6 +1,5 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { useTheme } from '@/components/ThemeProvider';
@@ -205,8 +204,6 @@ export default function FeaturesPage() {
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-black' : 'bg-white'}`}>
-      <Navbar />
-
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">

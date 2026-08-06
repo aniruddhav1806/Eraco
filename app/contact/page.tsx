@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useTheme } from '@/components/ThemeProvider';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function ContactPage() {
@@ -11,8 +10,6 @@ export default function ContactPage() {
 
   return (
     <div className={`min-h-screen ${isLight ? 'bg-white text-eraco-black' : 'bg-eraco-black text-white'}`}>
-      <Navbar />
-
       <main className="max-w-3xl mx-auto px-6 py-16 pt-32">
         <motion.div
           initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}

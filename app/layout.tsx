@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
   title: 'Eraco - AI That Actually Gets Work Done',
@@ -103,7 +104,8 @@ export default function RootLayout({
                   } else if (theme === 'light') {
                     document.documentElement.classList.add('light');
                   } else {
-                    document.documentElement.classList.add('light');
+                    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    document.documentElement.classList.add(prefersDark ? 'dark' : 'light');
                   }
                 } catch (e) {}
               })();
@@ -119,6 +121,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ThemeProvider>
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

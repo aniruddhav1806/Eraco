@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useTheme } from '@/components/ThemeProvider';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function NotFound() {
@@ -11,8 +10,6 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
-
       <main
         className={`min-h-screen flex flex-col items-center justify-center px-4 text-center ${
           isDark ? 'bg-black' : 'bg-white'
