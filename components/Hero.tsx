@@ -1,0 +1,167 @@
+'use client';
+
+import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { useRef, useEffect } from 'react';
+
+const wingImages = [
+  '/assets/File management.webp',
+  '/assets/File management (1).webp',
+  '/assets/File management (2).webp',
+  '/assets/File management (3).webp',
+  '/assets/File management (4).webp',
+  '/assets/File management (5).webp',
+];
+
+export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  // Track max scroll progress reached - once opened, stays open
+  const maxProgress = useMotionValue(0);
+
+  useEffect(() => {
+    const unsubscribe = smoothProgress.on('change', (latest) => {
+      maxProgress.set(Math.max(maxProgress.get(), latest));
+    });
+    return unsubscribe;
+  }, [smoothProgress, maxProgress]);
+
+  // Use maxProgress so lid stays open once scrolled past
+  const lidRotation = useTransform(maxProgress, [0, 0.2], [-90, 0]);
+  const laptopOpacity = useTransform(maxProgress, [0, 0.1], [0, 1]);
+  const wingOpacity = useTransform(smoothProgress, [0, 0.1], [0, 1]);
+  const wingScale = useTransform(smoothProgress, [0, 0.15], [0.8, 1]);
+
+  const wingTransforms = wingImages.map((_, index) => {
+    const offset = index < 3
+      ? { x: -500 + (index * 90), y: -350 + (index * 60), rotate: -55 + (index * 14) }
+      : { x: 500 - ((index - 3) * 90), y: -350 + ((index - 3) * 60), rotate: 55 - ((index - 3) * 14) };
+
+    return {
+      x: useTransform(smoothProgress, [0, 0.35], [0, offset.x]),
+      y: useTransform(smoothProgress, [0, 0.35], [0, offset.y]),
+      rotate: useTransform(smoothProgress, [0, 0.35], [0, offset.rotate]),
+      opacity: useTransform(smoothProgress, [0, 0.12 + index * 0.05], [0, 1]),
+    };
+  });
+
+  return (
+    <section
+      ref={containerRef}
+      className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-transparent"
+    >
+      {/* Seamless Ambient Radial Glow */}
+      <div className="absolute inset-0 ambient-glow-hero pointer-events-none" />
+
+      {/* TEXT */}
+      <div className="relative z-10 text-center px-4 mb-8">
+        <motion.h1
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 30 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-eraco-black dark:text-white mb-4 md:mb-6"
+        >
+          Reimagine How You{' '}
+          <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+            Interact
+          </span>{' '}
+          With Computers
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-base sm:text-lg md:text-xl text-gray-500 max-w-xl mx-auto px-2"
+        >
+          AI That Actually Gets Work Done
+        </motion.p>
+      </div>
+
+      {/* LAPTOP */}
+      <div className="relative w-full px-4 mt-8 md:mt-10">
+
+        {/* Mobile: Static laptop image */}
+        <div className="md:hidden relative mx-auto max-w-lg">
+          {/* Static laptop image */}
+          <img src="/assets/whole laptop.webp" loading="lazy" alt="Eraco Laptop" className="w-full relative z-10" />
+        </div>
+
+        {/* Desktop: Animated laptop with wings */}
+        <div className="hidden md:block relative max-w-5xl mx-auto" style={{ perspective: '2000px' }}>
+          {/* WINGS */}
+          <motion.div
+            style={{ opacity: wingOpacity, scale: wingScale }}
+            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          >
+            {wingImages.map((src, index) => {
+              const t = wingTransforms[index];
+              return (
+                <motion.div
+                  key={src}
+                  style={{ x: t.x, y: t.y, rotate: t.rotate, opacity: t.opacity }}
+                  className="absolute"
+                >
+                  <img src={src} loading="lazy" className="w-48" />
+                </motion.div>
+              );
+            })}
+          </motion.div>
+
+          {/* CONTAINER */}
+          <div
+            className="relative mx-auto w-full max-w-3xl"
+            style={{
+              transformStyle: 'preserve-3d',
+              transform: 'rotateX(-10deg)',
+            }}
+          >
+            {/* SCREEN */}
+            <motion.div
+              style={{
+                rotateX: lidRotation,
+                transformOrigin: 'bottom center',
+                opacity: laptopOpacity,
+              }}
+              className="relative z-10"
+            >
+              <img src="/assets/laptop lid layer.webp" loading="lazy" className="w-full" />
+            </motion.div>
+
+            {/* KEYBOARD */}
+            <motion.div
+              style={{ opacity: laptopOpacity }}
+              className="relative -mt-52 -translate-y-[50px]"
+            >
+              <img
+                src="/assets/laptop keyboard layer.webp"
+                loading="lazy"
+                className="w-full"
+              />
+            </motion.div>
+
+            {/* SHADOW */}
+            <motion.div
+              animate={{
+                scale: [1, 0.85, 1],
+                opacity: [0.3, 0.2, 0.3],
+              }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-black/20 rounded-full blur-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
